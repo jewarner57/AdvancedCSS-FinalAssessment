@@ -1,0 +1,23 @@
+.swatch {
+  width: 100px;
+  height: 100px;
+  margin: 1px;
+}
+
+.swatches {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+main {
+  max-width: 900px;
+  margin: auto;
+}
+
+@for $i from 0 through 99 {
+  .color-#{$i} {
+    background-color: hsl($i*3.6, 60%, 60%);
+  }
+}
