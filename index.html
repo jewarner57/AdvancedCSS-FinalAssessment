@@ -263,7 +263,7 @@
       let str = ''
       for (let i = 0; i < cart.length; i += 1) {
         // Shopping cart list item! 
-        str += `<li>
+        str += `<li class="p-1">
             <span>
 							<span>${cart[i].name}</span>
 							<span>${cart[i].price}</span> 
@@ -277,7 +277,7 @@
 							<input class="update" data-name="${cart[i].name}" type="number" value="${cart[i].qty}">
 							<button class="add-one" data-name="${cart[i].name}"> + </button>
 							<button class="remove-one" data-name="${cart[i].name}"> - </button>
-							<button class="remove" data-name="${cart[i].name}">remove</button>
+							<button class="remove btn-danger" data-name="${cart[i].name}">remove</button>
 						</span>
           </li>`
       }
