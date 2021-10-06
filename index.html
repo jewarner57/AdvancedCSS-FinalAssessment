@@ -3,8 +3,8 @@
 
 <head>
   <title>Color.fun</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" type="text/css" href="falls.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
@@ -150,7 +150,7 @@
 
 
     <!-- Footer -->
-    <section id="footer">
+    <section id="footer" class="page-footer foot-light">
       <footer>
         <ul>
 
@@ -262,9 +262,10 @@
     function showCart() {
       let str = ''
       for (let i = 0; i < cart.length; i += 1) {
+        const className = cart[i].name.split(" ").join("-").toLowerCase()
         // Shopping cart list item! 
-        str += `<li class="p-1">
-            <span>
+        str += `<li class="p-1 ${className} cart-item">
+            <span class="cart-details">
 							<span>${cart[i].name}</span>
 							<span>${cart[i].price}</span> 
 							<span>each x</span>
@@ -274,7 +275,7 @@
 						</span>
             
 						<span>
-							<input class="update" data-name="${cart[i].name}" type="number" value="${cart[i].qty}">
+							<input class="form-control update" data-name="${cart[i].name}" type="number" value="${cart[i].qty}">
 							<button class="add-one" data-name="${cart[i].name}"> + </button>
 							<button class="remove-one" data-name="${cart[i].name}"> - </button>
 							<button class="remove btn-danger" data-name="${cart[i].name}">remove</button>
@@ -282,7 +283,7 @@
           </li>`
       }
       itemsList.innerHTML = str
-      divTotal.innerHTML = getTotal()
+      divTotal.innerHTML = `Order Total: $${getTotal()}`
     }
 
     function getTotal() {

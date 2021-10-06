@@ -11,6 +11,8 @@ class TickerTape extends HTMLElement {
     // Get the text in the original tag and put it in the span element
     this._tapeText.innerHTML = this.innerHTML
 
+    this._tapeText.style.textAlign = 'center'
+
     this._delay = 100
   }
 
